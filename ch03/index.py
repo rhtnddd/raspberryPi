@@ -1,4 +1,3 @@
-import LED
 from flask import Flask, request, render_template
 import RPi.GPIO as GPIO
 
