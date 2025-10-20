@@ -1,31 +1,24 @@
 document.getElementById('submitBtn').addEventListener('click', ()=>{
-    const value = document.querySelector('input').value;
-    console.log(value);
-
-    if(value>=0 && value<=180){
-        fetch('http://localhost:5000/rotate',{
+    const value = parseInt(document.querySelector('input').value);
+    if(!isNaN(value) && value >= 0 && value <= 180){
+        fetch('/rotate', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                angle: parseInt(value)
-            })
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ angle: value })
         })
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
-            console.log(data);
             if(data.status === 'ok'){
-                console.log(data.angle);
+                console.log("회전 각도:", data.angle);
             }else{
                 alert(`에러: ${data.msg}`);
             }
         })
-        .catch(error => {
-            console.error('Error:', error);
+        .catch(err => {
+            console.error(err);
             alert('서버 연결 실패');
         });
-    }else{
-        alert("잘못된 입력 입니다");
+    } else {
+        alert("0~180 사이 숫자를 입력하세요");
     }
 });
