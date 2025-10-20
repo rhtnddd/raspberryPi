@@ -15,7 +15,6 @@ def setAngle(angle):
 
 if __name__ == "__main__":
     servo.start(0)
-
     setAngle(0)
     sleep(1)
     setAngle(90)
@@ -26,6 +25,5 @@ if __name__ == "__main__":
     sleep(1)
     setAngle(180)
     sleep(1)
-
-	servo.stop()
-	GPIO.cleanup()
+    servo.stop()
+    GPIO.cleanup()
