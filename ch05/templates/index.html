@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>민길이와 함께하는 라즈베리 파이</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        #container{
+
+        }
+        table{
+
+        }
+        th, td{
+            padding: 10px;
+            border-bottom: 1px solid #333;
+        }
+    </style>
 </head>
 <body>
-
+    <div id="container">
+        <div>
+            <button id="now">now</button>
+            <button id="record">record</button>
+        </div>
+        <table id="tb">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>date time</th>
+                    <th>temperature</th>
+                    <th>humidity</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+    <script src="./index.js"></script>
 </body>
 </html>
